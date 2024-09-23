@@ -1,6 +1,13 @@
-m = "1234"
-
-
+import random
+f = ["1","2","3","4","5","6","7","8","9"]
+m = ""
+for i in range(0, 9):
+    s = random.choice(f)
+    if s not in m:
+        m += s
+    if len(m) == 4:
+        break
+print(m)
 def main(i):
     if i == m:
         return "вы угадали"
@@ -9,8 +16,8 @@ def main(i):
         n = 0
         for j in i:
             k += m.count(j)
-            if m in j:
-                if m.index(j) == i.index(j):
+            if j in m:
+                if i.index(j) == m.index(j):
                     n += 1
         return (f"Быки:{k}",f"Коровы:{n}")
 
