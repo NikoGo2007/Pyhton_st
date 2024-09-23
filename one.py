@@ -1,7 +1,7 @@
 import random
-f = ["1","2","3","4","5","6","7","8","9"]
-m = ""
-for i in range(0, 9):
+f = ["0","1","2","3","4","5","6","7","8","9"]
+m = "" + str(random.randrange(1,10))
+for i in range(10):
     s = random.choice(f)
     if s not in m:
         m += s
