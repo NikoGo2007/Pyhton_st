@@ -52,3 +52,8 @@ for i in f:
             flag += g[1]
 res = calc(arg1, arg2, action_)
 
+def last(res, text):
+    return text[res]
+
+print(last(res, text))
+
