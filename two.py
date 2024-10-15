@@ -52,7 +52,7 @@ for i in f:
             else:
                 action_ = g[0]
                 flag += g[1]
-if action_:
+if action_ and arg1 and arg2:
     res = calc(arg1, arg2, action_)
     print(text[res])
 else:
