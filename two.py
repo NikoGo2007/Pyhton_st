@@ -16,6 +16,7 @@ def calc(arg1, arg2, action_):
         return arg1 * arg2
 
 
+
 def determinat(arg):
         if arg in num_20_1[0]:
             for i in num_20_1[0]:
@@ -39,21 +40,22 @@ for i in f:
     if i == "на":
         None
     else:
-        g = determinat(i)
-        if isinstance(g[0], int):
-            if flag <= 3:
-                arg1 += g[0]
+        if determinat(i):
+            g = determinat(i)
+            if isinstance(g[0], int):
+                if flag <= 3:
+                    arg1 += g[0]
+                    flag += g[1]
+                elif flag >= 4:
+                    arg2 += g[0]
+                    flag += g[1]
+            else:
+                action_ = g[0]
                 flag += g[1]
-            elif flag >= 4:
-                arg2 += g[0]
-                flag += g[1]
-        else:
-            action_ = g[0]
-            flag += g[1]
-res = calc(arg1, arg2, action_)
+if action_:
+    res = calc(arg1, arg2, action_)
+    print(text[res])
+else:
+    print("Данные введены не корректно")
 
-def last(res, text):
-    return text[res]
-
-print(last(res, text))
 
