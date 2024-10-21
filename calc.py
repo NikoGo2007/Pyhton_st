@@ -1,9 +1,6 @@
 #project calc
-from numbers_in_words import text
-num_100_10 = [['ноль', 'десять', 'двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто', 'сто'], [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]
-num_20_1 = [['один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать']
-, [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17 ,18 ,19]]
-action = ["плюс","минус","разделить","делить","умножить"]
+from numbers_in_words import text, action, num_20_1, num_100_10
+
 
 def calc(arg1, arg2, action_):
     if action_ == action[0]:
@@ -14,7 +11,6 @@ def calc(arg1, arg2, action_):
         return arg1 / arg2
     elif action_ == action[4]:
         return arg1 * arg2
-
 
 
 def determinat(arg):
@@ -30,6 +26,7 @@ def determinat(arg):
             for i in action:
                 if arg == i:
                         return [arg, 3]
+
 
 f = input(": ").split()
 flag = 0
@@ -54,7 +51,7 @@ for i in f:
                 flag += g[1]
 if action_ and arg1 and arg2:
     res = calc(arg1, arg2, action_)
-    print(text[res])
+    print(res)
 else:
     print("Данные введены не корректно")
 

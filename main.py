@@ -65,7 +65,7 @@ def i_6(x):
     return (n)
 
 
-#print(i_6([135,144,155,22,33,21,36,2]))
+#print(i_6([1351,144,1,22,33,21,36,2]))
 
 
 def i_7(n, k):
@@ -77,28 +77,23 @@ def i_7(n, k):
     return l
 
 
-#print(i_7([1,2,3,4,5,6,7,8,9,-1,10,11,12,13,14,15], 8))
+#print(i_7([1,2,3,4,5,6,7,8,9,-1,10,11,12,13,14,15], 2))
 
 
 def i_8(n, m):
-    matr = []
-    strw = []
-    ko = 0
-    for i_n in range(n):
-        for i_m in range(m):
-            strw.append(int(input(f"число {i_n + 1} блока {i_m + 1} строки ")))
-        matr.append(strw)
-        strw = []
+    import random
+    matrix = []
+    mtr = []
+    k = 0
+    for i in range(int(n)):
+        for j in range(int(m)):
+            mtr += [random.randint(1, 100)]
+        matrix.append(mtr)
+        mtr = []
+    print(*matrix, sep='\n')
+    return max(matrix)
 
-    for i in range(0, len(matr)):
-        for j in range(0, len(matr[i])):
-            if matr[i] == max(matr):
-                if matr[i][j] == max(matr[i]):
-                    ko = matr[i]
-    return ko
-
-
-#print(i_8(int(input("колличество блоков ")),int(input("колличество столбцов "))))
+print(i_8(int(input("колличество блоков ")),int(input("колличество столбцов "))))
 
 
 def i_9(n):
@@ -110,7 +105,7 @@ def i_9(n):
 
 def i_10(n):
     l = ""
-    for i in range(0, len(n)):
+    for i in range(len(n)):
         if i % 2 == 0:
             l += n[i]
     return l
