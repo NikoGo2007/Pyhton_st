@@ -84,16 +84,24 @@ def i_8(n, m):
     import random
     matrix = []
     mtr = []
-    k = 0
+    l = []
+    d = []
     for i in range(int(n)):
         for j in range(int(m)):
             mtr += [random.randint(1, 100)]
         matrix.append(mtr)
         mtr = []
     print(*matrix, sep='\n')
-    return max(matrix)
+    print("----------------")
+    for i in matrix:
+        l += [max(i)]
+        d += [matrix.index(i)]
+    k = d[l.index(max(l))]
+    inn = matrix.index(matrix[k])
+    mt = matrix[0:inn]+[matrix[k]]+matrix[inn:]
+    return (mt)
 
-print(i_8(int(input("колличество блоков ")),int(input("колличество столбцов "))))
+#print(*i_8(int(input("колличество блоков ")),int(input("колличество столбцов "))),sep='\n')
 
 
 def i_9(n):
@@ -113,28 +121,29 @@ def i_10(n):
 #print(i_10(input("строка ")))
 
 
-def i_11_a(x, y):  #1 часть задания 11
-    z = {}
-    # z = {**x, **y} способ в котором при повторении ключа будет браться значение из 2 словаря
-    z.update(x)
-    z.update(y)
-    return z
+def i_11(x_1={}, y_1={}, x_2={}, x_3=0, key=0):
+    if key == 1:
+        z = {}
+        # z = {**x, **y} способ в котором при повторении ключа будет браться значение из 2 словаря
+        z.update(x_1)
+        z.update(y_1)
+        print(z)
+    if key == 2:
+        for i, b in x_2.items():
+            print(i, b)
+    if key == 3:
+        a = {}
+        for m in range(1, x_3 + 1):
+            k = list(input(f"список {m} "))
+            a.update(dict.fromkeys(str(m), k))
+        print(a)
 
 
-#print(i_11_a({"a":1,"b":2}, {"c":3,"d":4}))
-
-#print(tabulate({"a":1,"b":2,"c":3}.items())) #2 часть 11 задания
-
-
-def i_11_b(x):
-    a = {}
-    for m in range(1, x + 1):
-        k = list(input(f"список {m} "))
-        a.update(dict.fromkeys(str(m), k))
-    return a
+a = {"a":1,"b":2}
+b = {"c":3,"d":4}
 
 
-#print(i_11_b(int(input("колличество списков < 10 ")))) #3 часть 11 задания
+i_11(a,b,a,11, 3) #3 часть 11 задания
 
 
 def i_12_a(x):
