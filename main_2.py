@@ -8,20 +8,29 @@ def SumRange(a, b):
     return result
 
 
-#print(SumRange(1,18)) #14 задание
+#print(SumRange(1,3)) #14 задание
+
 
 def RemoveRows(m, n, k):
     strw = []
     matrx = []
+    ma = []
     k0 = 0
-    if m >= k[1]:
-        for i_n in range(n):
-            for i_m in range(m):
-                k0 += 1
-                strw.append(k0)
-            matrx.append(strw)
-            strw = []
-    ma = matrx[:k[0] - 1] + matrx[k[1]:]
-    for j in ma:
-        print(j)
-#RemoveRows(10,10,[2,6]) #15 задание
+    for i_n in range(n):
+        for i_m in range(m):
+            k0 += 1
+            strw.append(k0)
+        matrx.append(strw)
+        print(strw)
+        strw = []
+    print("--------------------------")
+    if k[0] > m:
+        print(*matrx, sep="\n")
+    elif k[1] > m:
+        ma = matrx[:k[0] - 1] + matrx[m:]
+    else:
+        ma = matrx[:k[0] - 1] + matrx[k[1]:]
+    print(*ma, sep="\n")
+
+
+#RemoveRows(10,10,[1,2]) #15 задание
