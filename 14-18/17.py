@@ -7,7 +7,7 @@ def Digits(S):
         return 0 + Digits(S[1:])
 
 
-S = "a1b2c3d45"
+S = "a1bc3d45"
 result = Digits(S)
 
 

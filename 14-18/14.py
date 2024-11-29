@@ -8,4 +8,4 @@ def SumRange(a, b):
     return result
 
 
-print(SumRange(1,3))
+print(SumRange(1,5))
