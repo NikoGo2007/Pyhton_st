@@ -1,23 +1,13 @@
-def RemoveRows(m, n, k):
-    strw = []
-    matrx = []
-    ma = []
-    k0 = 0
-    for i_n in range(n):
-        for i_m in range(m):
-            k0 += 1
-            strw.append(k0)
-        matrx.append(strw)
-        print(strw)
-        strw = []
-    print("--------------------------")
-    if k[0] > m:
-        print(*matrx, sep="\n")
-    elif k[1] > m:
-        ma = matrx[:k[0] - 1] + matrx[m:]
+def RemoveRows(matrix, k):
+    if k[0] > len(matrix):
+        return matrix
+    elif k[1] > len(matrix):
+        ma = matrix[:k[0] - 1] + matrix[len(matrix):]
     else:
-        ma = matrx[:k[0] - 1] + matrx[k[1]:]
-    print(*ma, sep="\n")
+        ma = matrix[:k[0] - 1] + matrix[k[1]:]
+    return ma
 
 
-RemoveRows(10,10,[1,2])
+mtrx = [[1,2,3,4,5],[6,7,8,9,0],[11,12,13,14,15],[16,17,18,19,20],[21,22,23,24,25],[26,27,28,29,30]]
+
+print(*RemoveRows(mtrx,[2,4]), sep="\n")

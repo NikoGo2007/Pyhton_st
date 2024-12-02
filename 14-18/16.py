@@ -48,4 +48,4 @@ def unique_sorted_elements(*arg):
     return result
 
 
-print(unique_sorted_elements(["1","2"], ["2","3"], ["3", "4"]))
+print(unique_sorted_elements([1,2], [5,11], [3, -1]))
