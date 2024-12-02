@@ -1,6 +1,23 @@
-def pair_and_filter(arg1, arg2, filter_function = None):
-    return True
+def pair_and_filter(list1, list2, filter_function = None):
+    result = []
+    a = tuple()
+    for x in list1:
+        for y in list2:
+            if filter_function == None:
+                a += (x, y)
+                result.append(a)
+                a = tuple()
+            else:
+                if filter_function(x,y):
+                    a += (x,y)
+                    result.append(a)
+                    a = tuple()
+    return result
 
+
+
+
+print(pair_and_filter([1, 2], [3, 4], filter_function=lambda x, y: (x + y) % 2 == 0))
 
 def concat_or_upper(strings, uppercase = None):
     if uppercase:
