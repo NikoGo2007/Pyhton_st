@@ -1,4 +1,17 @@
 f = open("matrices.txt", "r")
+k,m,ko = [],[],[]
+for i in f:
+    if len(i) != 1:
+        for mj in i.rstrip().split(" "):
+            ko += [int(float(mj))]
+        m += [ko]
+        ko = []
+    else:
+        k += [m]
+        m = []
+print(k)
+
+
 def sum_diagonals(matrix):
     main_diagonal_sum = 0
     secondary_diagonal_sum = 0
@@ -9,7 +22,7 @@ def sum_diagonals(matrix):
 
 
 two = open("21_2.txt", "w")
-for i in f:
+for i in k:
     print(i)
     print(sum_diagonals(i))
     if sum_diagonals(i) % 2 != 0:
