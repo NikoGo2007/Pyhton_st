@@ -1,8 +1,11 @@
-one = open('19.txt', 'r')
-res = open("19_res.txt", 'w')
-s = "rrrrreeeeeeeeaaaaaaaaaaddddddd"
-for i in one:
+f = open('19.txt', 'r')
+s, k = "12345", []
+for i in f:
     if len(i)-1 == 0:
-        res.write(s + '\n')
+        k += [s + "\n"]
     else:
-        res.write(i)
+        k += [i]
+f = open('19.txt', 'w')
+for i in k:
+    f.write(i)
+f.close()
