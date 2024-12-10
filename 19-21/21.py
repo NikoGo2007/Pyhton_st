@@ -2,6 +2,7 @@ import numpy as np
 one = open("21_1.txt", "r")
 k,m,ko = [],[],[]
 for i in one:
+    print(len(i))
     if len(i) != 1:
         for mj in i.rstrip().split(" "):
             ko += [int(mj)]
@@ -10,7 +11,7 @@ for i in one:
     else:
         k += [m]
         m = []
-
+print(k)
 
 def sum_diagonals(matrix):
     main_diagonal_sum = 0

@@ -1,15 +1,17 @@
-# i = [1351,144,132,1,22,33,21,36,2]
-#
-# i_min = i.index(min(i))
-# i_max = i.index(max(i))
-# i[min(i_min, i_max)+1:max(i_min,i_max)] = [0]*(max(i_min,i_max)-min(i_min,i_max)-1)
-# print(i)
-#
-#
+import re
 
-i =[1,2,3,4,5,6,7,8,9,-1,10,11,12,13,14,15]
 
-k = 5
+def find_consonant_words(input_string):
+    # Регулярное выражение для поиска слов, начинающихся на согласную букву
+    pattern = r'\b[бвгджзйклмнпрстфхцчшщБВГДЖЗЙКЛМНПРСТФХЦЧШЩ]\w*'
 
-j = sorted(x for x in i if x < k)
-print(j)
+    # Находим все слова, соответствующие паттерну
+    consonant_words = re.findall(pattern, input_string)
+
+    return consonant_words
+
+
+# Пример использования функции
+input_string = "Это пример строки с несколькими словами"
+result = find_consonant_words(input_string)
+print(result)
