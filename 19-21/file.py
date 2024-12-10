@@ -1,4 +1,4 @@
-f = open("matrices.txt", "r")
+f = open("test.txt", "r")
 k,m,ko = [],[],[]
 for i in f:
     if len(i) != 1:
