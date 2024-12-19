@@ -51,7 +51,7 @@ for i in f:
                 flag += g[1]
 if action_ and arg1 and arg2:
     res = calc(arg1, arg2, action_)
-    print(res)
+    print(text[int(res)])
 else:
     print("Данные введены не корректно")
 
