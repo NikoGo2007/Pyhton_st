@@ -1,5 +1,5 @@
 f = open('19.txt', 'r')
-s, k = "12345", []
+s, k = input("S: "), []
 for i in f:
     if len(i)-1 == 0:
         k += [s + "\n"]
